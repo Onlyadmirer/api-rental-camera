@@ -1,4 +1,10 @@
 from fastapi import FastAPI
+from database import engine, Base
+from models import user, equipment, rental
+
+
+# membuat file rental_kamera.db beserta tabelnya
+Base.metadata.create_all(bind=engine)
 
 # Inisialisasi aplikasi FastAPI
 app = FastAPI(
