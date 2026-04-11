@@ -1,0 +1,19 @@
+rental_kamera_api/
+├── main.py             # Entry point FastAPI [cite: 46]
+├── database.py         # Koneksi & session database SQLite [cite: 47]
+├── models/             # SQLAlchemy models [cite: 48]
+│   ├── user.py
+│   ├── equipment.py
+│   └── rental.py
+├── schemas/            # Pydantic schemas untuk validasi input [cite: 49]
+│   ├── user.py
+│   ├── equipment.py
+│   └── rental.py
+├── routers/            # Endpoint per domain [cite: 50]
+│   ├── user.py
+│   ├── equipment.py
+│   └── rental.py
+├── auth/               # JWT & security logic [cite: 50]
+│   └── auth.py
+├── requirements.txt    # Dependensi Python [cite: 51]
+└── README.md           # Dokumentasi proyek [cite: 51]
