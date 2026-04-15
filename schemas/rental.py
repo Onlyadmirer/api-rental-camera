@@ -7,7 +7,7 @@ class RentalBase(BaseModel):
     end_date: datetime
 
 class RentalCreate(RentalBase):
-    pass
+    user_id: int
 
 class RentalResponse(RentalBase):
     id: int
