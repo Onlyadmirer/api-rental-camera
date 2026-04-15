@@ -12,7 +12,7 @@ ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30 # Token akan hangus dalam 30 menit
 
 # FastAPI URL mana yang dipakai untuk login
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="users/login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/users/login")
 
 def get_password_hash(password: str):
     return pwd_context.hash(password)
