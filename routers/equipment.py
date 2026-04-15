@@ -51,7 +51,7 @@ def update_equipment(equipment_id: int, updated_equipment: EquipmentCreate, db: 
     return equipment_query.first()
 
 # DELETE: Menghapus alat
-@router.delete("/{equipment_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/{equipment_id}", status_code=status.HTTP_200_OK) 
 def delete_equipment(equipment_id: int, db: Session = Depends(get_db)):
     equipment_query = db.query(Equipment).filter(Equipment.id == equipment_id)
     equipment = equipment_query.first()
@@ -61,4 +61,5 @@ def delete_equipment(equipment_id: int, db: Session = Depends(get_db)):
     
     equipment_query.delete(synchronize_session=False)
     db.commit()
-    return None
+    
+    return {"message": f"Alat dengan ID {equipment_id} berhasil dihapus dari sistem"}
